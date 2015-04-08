@@ -1,21 +1,33 @@
- /**
- * Contus Support Interactive.
+/**
+ * Apptha
  *
  * NOTICE OF LICENSE
  *
  * This source file is subject to the EULA
- * that is bundled with this package in the file PRICE COUNTDOWN-LICENSE.txt.
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.apptha.com/LICENSE.txt
  *
- * =================================================================
+ * ==============================================================
  *                 MAGENTO EDITION USAGE NOTICE
- * =================================================================
- * This package designed for Magento 1.4.x and 1.5.x COMMUNITY edition
- * Contus Support does not guarantee correct work of this package
- * on any other Magento edition except Magento 1.4.x and 1.5.x COMMUNITY edition.
- * =================================================================
+ * ==============================================================
+ * This package designed for Magento COMMUNITY edition
+ * Apptha does not guarantee correct work of this extension
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * Apptha does not provide extension support in case of
+ * incorrect edition usage.
+ * ==============================================================
+ *
+ * @category    Apptha
+ * @package     Apptha_PriceCount
+ * @version     0.1.4
+ * @author      Apptha Team <developers@contus.in>
+ * @copyright   Copyright (c) 2014 Apptha. (http://www.apptha.com)
+ * @license     http://www.apptha.com/LICENSE.txt
+ *
  */
 
- var j =1;
+ var timer =1;
         if (typeof(BackColor)=="undefined")
             BackColor = "white";
         if (typeof(ForeColor)=="undefined")
@@ -40,11 +52,11 @@
                 s = "0" + s;
             return "<b>" + s + "</b>";
         }
-        function CountBack(secs,iid,j) {
+        function CountBack(secs,iid,timer) {
             if (secs < 0) {
                 document.getElementById(iid).innerHTML = FinishMessage;
-                document.getElementById('caption'+j).style.display = "none";
-                document.getElementById('heading'+j).style.display = "none";
+                document.getElementById('caption'+timer).style.display = "none";
+                document.getElementById('heading'+timer).style.display = "none";
                 return;
             }
             DisplayStr = DisplayFormat.replace(/%%D%%/g, calcage(secs,86400,100000));
@@ -53,5 +65,5 @@
             DisplayStr = DisplayStr.replace(/%%S%%/g, calcage(secs,1,60));
             document.getElementById(iid).innerHTML = DisplayStr;
             if (CountActive)
-                setTimeout(function(){CountBack((secs+CountStepper),iid,j)}, SetTimeOutPeriod);
+                setTimeout(function(){CountBack((secs+CountStepper),iid,timer)}, SetTimeOutPeriod);
         }

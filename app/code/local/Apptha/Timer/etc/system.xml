@@ -1,4 +1,34 @@
 <?xml version="1.0"?>
+<!--
+/**
+ * Apptha
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.apptha.com/LICENSE.txt
+ *
+ * ==============================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * ==============================================================
+ * This package designed for Magento COMMUNITY edition
+ * Apptha does not guarantee correct work of this extension
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * Apptha does not provide extension support in case of
+ * incorrect edition usage.
+ * ==============================================================
+ *
+ * @category    Apptha
+ * @package     Apptha_PriceCount
+ * @version     0.1.4
+ * @author      Apptha Team <developers@contus.in>
+ * @copyright   Copyright (c) 2014 Apptha. (http://www.apptha.com)
+ * @license     http://www.apptha.com/LICENSE.txt
+ *
+ */
+  -->
 <config>
     <tabs>
         <Apptha translate="label" module="timer">
@@ -23,7 +53,7 @@
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
                     <fields>
-                        <activate_apptha_timer translate="label">
+                        <enabled translate="label">
                             <label>Activate Price Countdown:</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
@@ -32,39 +62,36 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                             <comment>Activate Product Timer</comment>
-                        </activate_apptha_timer>
-
-                        <activate_apptha_heading translate="label">
+                        </enabled>
+                        <timer_heading translate="label">
                             <label>Timer Heading:</label>
                             <frontend_type>select</frontend_type>
-                            <source_model>adminhtml/system_config_source_Heading</source_model>
+                            <source_model>Apptha_Timer_Model_System_Config_Source_Showin</source_model>
                             <sort_order>1</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                             <comment>Timer Heading</comment>
-                        </activate_apptha_heading>
-
-                         <activate_apptha_description translate="label">
+                        </timer_heading>
+                         <timer_catption translate="label">
                             <label>Timer Caption:</label>
                             <frontend_type>select</frontend_type>
-                            <source_model>adminhtml/system_config_source_Caption</source_model>
+                            <source_model>Apptha_Timer_Model_System_Config_Source_Showin</source_model>
                             <sort_order>2</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                             <comment>Timer Caption</comment>
-                        </activate_apptha_description>
-                        
-                        <heading translate="label">
-                            <label>Timer Title:</label>
+                        </timer_catption>
+                        <title translate="label">
+                            <label>Timer Heading Text:</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>3</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                            <comment>Timer Title.</comment>
-                        </heading>
+                            <comment>Timer Heading Text.</comment>
+                        </title>
                     </fields>
                 </general>
                 <apptha_timer_color translate="label" module="timer">
@@ -85,7 +112,6 @@
                              <validate>color</validate>
                             <comment>Please Click the text box to select color</comment>
                         </text>
-
                         <heading_text_color translate="label">
                             <label>Timer Heading Text Color:</label>
                             <frontend_type>text</frontend_type>
@@ -96,7 +122,6 @@
                              <validate>color</validate>
                             <comment>Please Click the text box to select color</comment>
                         </heading_text_color>
-
                         <description translate="label">
                             <label>Timer Caption Text Color:</label>
                             <frontend_type>text</frontend_type>
@@ -107,8 +132,6 @@
                              <validate>color</validate>
                             <comment>Please Click the text box to select color</comment>
                         </description>
-
-                        
                     </fields>
                 </apptha_timer_color>
             </groups>
